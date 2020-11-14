@@ -73,21 +73,12 @@ function App() {
       return null;
     }} />
     <div className="App">
-     
-      
-      {autenticado?
-      <span>
-      
       <Cadastro atualiza={handleAtualiza}/>
       <Listagem 
         atualiza={handleAtualiza}
         listaCompleta={dados}
         remove={remove}
-
-      />
-      </span>:
-      <Login autentica={autentica} login={recebeLogin}/>}
-           
+      />      
     </div>
   </Router>
   );
