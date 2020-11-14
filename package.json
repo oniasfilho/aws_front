@@ -36,6 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://softplanapi-env.eba-rxwir9h6.sa-east-1.elasticbeanstalk.com/"
+  }
 }
