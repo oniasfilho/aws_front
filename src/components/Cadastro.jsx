@@ -120,7 +120,7 @@ function Cadastro(props){
 		try {
 			let res = await axios({
 				method: 'post',
-				url: '/api/pessoas',
+				url: 'http://softplanapi-env.eba-rxwir9h6.sa-east-1.elasticbeanstalk.com/api/pessoas',
 				data: pessoa,
 				headers:{
 			 	  	'Content-Type' : 'application/json'

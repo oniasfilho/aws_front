@@ -45,7 +45,7 @@ function App() {
 
   useEffect(() =>{
     try {
-			let res = axios.get("/api/pessoas", {
+			let res = axios.get("http://softplanapi-env.eba-rxwir9h6.sa-east-1.elasticbeanstalk.com/api/pessoas", {
               });
             res.then(data => {
               setDados(data.data)

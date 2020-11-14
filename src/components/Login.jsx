@@ -16,7 +16,7 @@ function Login(props){
         const {username, password} = loginData;
        
 		try {
-			const res = await axios.get('/login', {
+			const res = await axios.get('http://softplanapi-env.eba-rxwir9h6.sa-east-1.elasticbeanstalk.com/login', {
             auth: {
                 username: username,
                 password: password

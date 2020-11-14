@@ -119,7 +119,7 @@ function RegistroLista(props){
     try {
 			let res = await axios({
 				method: 'delete',
-				url: `/api/pessoas/${id}`,
+				url: `http://softplanapi-env.eba-rxwir9h6.sa-east-1.elasticbeanstalk.com/api/pessoas/${id}`,
 				
 			});
       console.log(res)
