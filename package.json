@@ -37,5 +37,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://softplanapi-env.eba-rxwir9h6.sa-east-1.elasticbeanstalk.com/"
 }

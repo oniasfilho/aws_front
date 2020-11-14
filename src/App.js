@@ -69,7 +69,7 @@ function App() {
   return (
     <Router>
     <Route path="/source" component={()=>{
-      window.location.href="http://localhost:8080/source";
+      window.location.href="http://softplanapi-env.eba-rxwir9h6.sa-east-1.elasticbeanstalk.com/source";
       return null;
     }} />
     <div className="App">

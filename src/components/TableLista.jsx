@@ -240,7 +240,7 @@ function RegistroLista(props){
                   <i className="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                 </a>
                 <a 
-                  href="#deleteEmployeeModal" 
+                  href="delete" 
                   className="delete" 
                   onClick={()=> deletaUser(item.id)} 
                 >
