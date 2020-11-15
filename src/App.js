@@ -45,8 +45,10 @@ function App() {
 
   useEffect(() =>{
     try {
-			let res = axios.get("https://www.oniasfilho.io/api/pessoas", {
-              });
+			let res = axios.get("/api/pessoas", {
+            // "Content-Type":"application/json",
+            // "Accept": "application/json"
+            });
             res.then(data => {
               setDados(data.data)
             })
@@ -69,7 +71,7 @@ function App() {
   return (
     <Router>
     <Route path="/source" component={()=>{
-      window.location.href="https://www.oniasfilho.io/source";
+      window.location.href="/source";
       return null;
     }} />
     <div className="App">

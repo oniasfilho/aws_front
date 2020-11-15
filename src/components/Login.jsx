@@ -16,11 +16,13 @@ function Login(props){
         const {username, password} = loginData;
        
 		try {
-			const res = await axios.get('https://www.oniasfilho.io/login', {
+			const res = await axios.get('/login', {
             auth: {
                 username: username,
                 password: password
-            }
+            },
+            "Content-Type":"application/json",
+            "Accept": "application/json"
             });
             console.log(res);
             props.autentica();
