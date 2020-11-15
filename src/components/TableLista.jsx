@@ -119,7 +119,7 @@ function RegistroLista(props){
     try {
 			let res = await axios({
 				method: 'delete',
-        url: `https://www.oniasfilho.io/api/pessoas/${id}`,
+        url: `http://localhost:5000/api/pessoas/${id}`,
         "Content-Type":"application/json",
         "Accept": "application/json"		
 			});
@@ -138,7 +138,7 @@ function RegistroLista(props){
 		try {
 			let res = await axios({
 				method: 'put',
-				url: 'https://www.oniasfilho.io/api/pessoas',
+				url: 'http://localhost:5000/api/pessoas',
 				data: pessoaSelecionada,
 				headers:{
 			 	  'Content-Type' : 'application/json'

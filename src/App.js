@@ -44,18 +44,26 @@ function App() {
   })
 
   useEffect(() =>{
+    
     try {
-			let res = axios.get("https://www.oniasfilho.io/api/pessoas", {
-              });
-            res.then(data => {
-              setDados(data.data)
-            })
-            
+      let res = axios.get("http://localhost:5000/api/pessoas");
+      
+      res.then(data => {
+        
+        
+        setDados(data.data)
+        
+      })
 
 		} catch (error) {
-			console.log(error)
+      
+        
+      console.log(error)
+      
 		}
-  }, [atualiza,autenticado])
+  }, [atualiza,basicAuthHeader])
+
+
 
 
   function remove(id){
@@ -69,7 +77,7 @@ function App() {
   return (
     <Router>
     <Route path="/source" component={()=>{
-      window.location.href="https://www.oniasfilho.io/source";
+      window.location.href="http://localhost:5000/api/source"; 
       return null;
     }} />
     <div className="App">

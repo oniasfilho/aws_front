@@ -14,9 +14,8 @@ function Login(props){
     
     async function valida(){
         const {username, password} = loginData;
-       
 		try {
-			const res = await axios.get('/login', {
+			const res = await axios.get('http://localhost:5000/login', {
             auth: {
                 username: username,
                 password: password
