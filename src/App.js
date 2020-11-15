@@ -45,7 +45,7 @@ function App() {
 
   useEffect(() =>{
     try {
-			let res = axios.get("http://softplanapi-env.eba-rxwir9h6.sa-east-1.elasticbeanstalk.com/api/pessoas", {
+			let res = axios.get("https://www.oniasfilho.io/api/pessoas", {
               });
             res.then(data => {
               setDados(data.data)
@@ -69,7 +69,7 @@ function App() {
   return (
     <Router>
     <Route path="/source" component={()=>{
-      window.location.href="http://softplanapi-env.eba-rxwir9h6.sa-east-1.elasticbeanstalk.com/source";
+      window.location.href="https://www.oniasfilho.io/source";
       return null;
     }} />
     <div className="App">
