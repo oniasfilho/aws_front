@@ -118,7 +118,8 @@ function RegistroLista(props){
   async function deletaUser(id){
     try {
 			let res = await axios({
-				method: 'delete',
+        method: 'delete',
+        //  --------------- ALTERAR AO ENVIAR PARA PRODUÇÃO  ------------------//
         url: `https://www.oniasfilho.io/api/pessoas/${id}`,
         "Content-Type":"application/json",
         "Accept": "application/json"		
@@ -137,7 +138,8 @@ function RegistroLista(props){
   async function atualizaUser(){	
 		try {
 			let res = await axios({
-				method: 'put',
+        method: 'put',
+        //  --------------- ALTERAR AO ENVIAR PARA PRODUÇÃO  ------------------//
 				url: 'https://www.oniasfilho.io/api/pessoas',
 				data: pessoaSelecionada,
 				headers:{
@@ -152,9 +154,22 @@ function RegistroLista(props){
       setErrosKeys([]);
       let modal =document.getElementById("cancela");
       modal.click();
-		} catch (error) {
 
+		} catch (error) {
       console.log(error.response)
+
+      if(error.response.data.message ==="CPF já cadastrado"){
+				setPessoaSelecionada((oldVal) =>{
+					return {...oldVal, cpfTemErro:true, cpfTemMensagem: "CPF já cadastrado"}
+				})
+      }
+      
+      if(error.response.data.field ==="dataDeNascimento"){
+				setPessoaSelecionada((oldVal) =>{
+					return {...oldVal, dataDeNascimentoTemErro:true, 
+							dataDeNascimentoTemMensagem: "Data de nascimento inválida."}
+				})
+			}
 			setErros({...error.response.data});
 			setErrosKeys(Object.keys(error.response.data));	
 		}	
@@ -203,9 +218,9 @@ function RegistroLista(props){
 							naturalidadeTemMensagem: erros.[erro]
 							}
 				})
-      }
-      
-      if(erro ==="nacionalidade"){
+			}
+
+			if(erro ==="nacionalidade"){
 				setPessoaSelecionada(oldVal =>{
 					return {...oldVal,
 							nacionalidadeTemErro: true,
@@ -241,7 +256,7 @@ function RegistroLista(props){
                   <i className="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                 </a>
                 <a 
-                  href="#deleteEmployeeModal" 
+                  href="#delete" 
                   className="delete" 
                   onClick={()=> deletaUser(item.id)} 
                 >
@@ -249,7 +264,7 @@ function RegistroLista(props){
               </td>
 
               {/* Modal de Edição do Usuário  */}
-              <div id="editModal" className="modal fade ">
+              <div id="editModal" className="modal fade " data-backdrop="static" data-keyboard="false">
                 <div className="modal-dialog">
                   <div className="modal-content">
                     <form>

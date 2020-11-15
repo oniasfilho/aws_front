@@ -120,6 +120,7 @@ function Cadastro(props){
 		try {
 			let res = await axios({
 				method: 'post',
+				//  --------------- ALTERAR AO ENVIAR PARA PRODUÇÃO  ------------------//
 				url: 'https://www.oniasfilho.io/api/pessoas',
 				data: pessoa,
 				headers:{
@@ -135,8 +136,6 @@ function Cadastro(props){
 			return data;
 
 		} catch (error) {
-
-
 			console.log(error.response)
 			if(error.response.data.message ==="CPF já cadastrado"){
 				setPessoa((oldVal) =>{
@@ -145,19 +144,18 @@ function Cadastro(props){
 			}
 
 			
-			let mensagem;
+			// let mensagem;
 			
-			if(error.response.data.message !== undefined){
-				mensagem = error.response.data.message.slice(0, 4);
-			}
+			// if(error.response.data.message !== undefined){
+			// 	mensagem = error.response.data.message.slice(0, 4);
+			// }
 			
+			console.log("O ERRO ESTA AQUI")
 
-			
-
-			if( mensagem !== undefined && mensagem !== null && mensagem ==="JSON"){
+			if(error.response.data.field ==="dataDeNascimento"){
 				setPessoa((oldVal) =>{
 					return {...oldVal, dataDeNascimentoTemErro:true, 
-						dataDeNascimentoTemMensagem: "data de nascimento invalida"}
+							dataDeNascimentoTemMensagem: "Data de nascimento inválida."}
 				})
 			}
 
@@ -303,7 +301,7 @@ function Cadastro(props){
 							className={ (pessoa.emailTemErro ? 
 								standardClass + standardError 
 								: standardClass) } 		
-							placeholder="Ex: john.doe@gmail.com"
+							placeholder="Ex: onias.filho@softplayer.com"
 							onChange={handleChange}
 							value={pessoa.email}
 							/>
@@ -319,7 +317,7 @@ function Cadastro(props){
 						
 						
 						
-
+						<label htmlFor="dataDeNascimento"> Data de Nascimento </label>		
 						<input 
 							name="dataDeNascimento"
 							type="text"

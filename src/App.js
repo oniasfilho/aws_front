@@ -25,6 +25,9 @@ function App() {
   }
 
 
+  
+
+
   function autentica(){
     setAutenticado(true);
     inserirInterceptadores();
@@ -46,6 +49,7 @@ function App() {
   useEffect(() =>{
     
     try {
+      //  --------------- ALTERAR AO ENVIAR PARA PRODUÇÃO  ------------------//
       let res = axios.get("https://www.oniasfilho.io/api/pessoas");
       
       res.then(data => {
@@ -74,10 +78,13 @@ function App() {
     setAtualiza(oldVal => oldVal +1)
   }
   
+
+
   return (
     <Router>
     <Route path="/source" component={()=>{
-      window.location.href="https://www.oniasfilho.io/api/source"; 
+        //  --------------- ALTERAR AO ENVIAR PARA PRODUÇÃO  ------------------
+      window.location.href="https://www.oniasfilho.io/source"; 
       return null;
     }} />
     <div className="App">
