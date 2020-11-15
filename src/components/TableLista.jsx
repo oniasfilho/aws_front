@@ -270,7 +270,7 @@ function RegistroLista(props){
                     <form>
                       <div className="modal-header">						
                         <h4 className="modal-title">Editar Usuário</h4>
-                        <button type="button" className="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={()=> setPessoaSelecionada(estadoInicial)}> &times;</button>
                       </div>
                       <div className="modal-body">					
                         <div className="form-group">
