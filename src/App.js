@@ -46,7 +46,7 @@ function App() {
   useEffect(() =>{
     
     try {
-      let res = axios.get("http://localhost:5000/api/pessoas");
+      let res = axios.get("https://www.oniasfilho.io/api/pessoas");
       
       res.then(data => {
         
@@ -77,7 +77,7 @@ function App() {
   return (
     <Router>
     <Route path="/source" component={()=>{
-      window.location.href="http://localhost:5000/api/source"; 
+      window.location.href="https://www.oniasfilho.io/api/source"; 
       return null;
     }} />
     <div className="App">

@@ -120,7 +120,7 @@ function Cadastro(props){
 		try {
 			let res = await axios({
 				method: 'post',
-				url: 'http://localhost:5000/api/pessoas',
+				url: 'https://www.oniasfilho.io/api/pessoas',
 				data: pessoa,
 				headers:{
 			 	  	'Content-Type' : 'application/json'
