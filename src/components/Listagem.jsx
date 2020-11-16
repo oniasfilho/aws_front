@@ -29,7 +29,8 @@ function Listagem(props){
                         <th className="w-25">Nome</th>
                         <th>CPF</th>
                         <th>Email</th>
-                        <th>Data de Nascimento</th>
+                        <th>Data de Criação</th>
+                        <th>Última Atualização</th>
                         <th>Ações</th>
 
                       </tr>

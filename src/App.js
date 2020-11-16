@@ -17,7 +17,7 @@ function App() {
     axios.interceptors.request.use(
       (config) => {
         if(autenticado){
-          config.headers.authorization = basicAuthHeader
+          config.headers.authorization = basicAuthHeader;
         }
         return config
       }
@@ -33,16 +33,17 @@ function App() {
     inserirInterceptadores();
   }
 
-  function recebeLogin(e){
-    const {username, password} = e;
-    setBasicAuthHeader('Basic ' + window.btoa(username + ":" + password))
-    sessionStorage.setItem('authenticatedUser', username);
+  function recebeLogin(){
+    
+    setBasicAuthHeader('Basic c29mdHBsYW46MTIzNDU=');
+    sessionStorage.setItem('authenticatedUser', 'softplan');
 
   }
 
   useEffect(() => {
     if(sessionStorage.authenticatedUser === "softplan"){
       autentica();
+      recebeLogin();
     }
   })
 
@@ -51,12 +52,8 @@ function App() {
     try {
       //  --------------- ALTERAR AO ENVIAR PARA PRODUÇÃO  ------------------//
       let res = axios.get("https://www.oniasfilho.io/api/pessoas");
-      
       res.then(data => {
-        
-        
         setDados(data.data)
-        
       })
 
 		} catch (error) {

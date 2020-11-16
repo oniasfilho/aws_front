@@ -120,7 +120,7 @@ function RegistroLista(props){
 			let res = await axios({
         method: 'delete',
         //  --------------- ALTERAR AO ENVIAR PARA PRODUÇÃO  ------------------//
-        url: `https://www.oniasfilho.io/api/pessoas/${id}`,
+        url: `http://localhost:8080/api/pessoas/${id}`,
         "Content-Type":"application/json",
         "Accept": "application/json"		
 			});
@@ -250,7 +250,8 @@ function RegistroLista(props){
               <td>{item.nome}</td>
               <td>{item.cpf}</td>
               <td>{item.email}</td>
-              <td>{item.dataDeNascimento}</td>
+              <td>{item.dataDeCriacao}</td>
+              <td>{item.ultimaAtualizacao}</td>
               <td>
                 <a href="#editModal" className="edit" data-toggle="modal" onClick={()=> selecionaEdit(item)}>
                   <i className="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>

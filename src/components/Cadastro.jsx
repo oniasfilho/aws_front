@@ -267,7 +267,7 @@ function Cadastro(props){
 								className={ (pessoa.cpfTemErro ? 
 									standardClass + standardError 
 									: standardClass) } 		 												 
-								placeholder="Apenas Numeros, ex: 00011122233"
+								placeholder="Apenas Números, ex: 00011122233"
 								onChange={handleChange}
 								value={pessoa.cpf}
 								/>
@@ -343,7 +343,7 @@ function Cadastro(props){
 							className={ (pessoa.naturalidadeTemErro ? 
 								standardClass + standardError 
 								: standardClass) } 	 
-							placeholder="Ex: Sao Paulo"
+							placeholder="Ex: São Paulo"
 							onChange={handleChange}
 							value={pessoa.naturalidade}
 							/>
