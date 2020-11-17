@@ -120,7 +120,7 @@ function RegistroLista(props){
 			let res = await axios({
         method: 'delete',
         //  --------------- ALTERAR AO ENVIAR PARA PRODUÇÃO  ------------------//
-        url: `http://localhost:8080/api/pessoas/${id}`,
+        url: `https://www.oniasfilho.io/api/pessoas/${id}`,
         "Content-Type":"application/json",
         "Accept": "application/json"		
 			});
