@@ -142,13 +142,6 @@ function Cadastro(props){
 					return {...oldVal, cpfTemErro:true, cpfTemMensagem: "CPF já cadastrado"}
 				})
 			}
-
-			
-			// let mensagem;
-			
-			// if(error.response.data.message !== undefined){
-			// 	mensagem = error.response.data.message.slice(0, 4);
-			// }
 			
 			console.log("O ERRO ESTA AQUI")
 
@@ -182,8 +175,7 @@ function Cadastro(props){
 							}
 				})
 			}
-			
-
+		
 			if(erro ==="dataDeNascimento"){
 				setPessoa(oldVal =>{
 					return {...oldVal,
@@ -228,6 +220,10 @@ function Cadastro(props){
 	let standardClass = " form-control ";
 	let standardError = "is-invalid";
 
+	const logout = () =>{
+		sessionStorage.setItem("authenticatedUser", "")
+		document.location.reload()
+	}
 	
   return(
     <div className="container-xl">
@@ -238,14 +234,14 @@ function Cadastro(props){
                         <div className="col-sm-10">
                             <h2>Cadastrar <b>Usuário</b></h2> 
                         </div>
-			<div className="col-sm-2">
-			<button 
-				type="submit"
-				className="btn btn-danger"
-				onClick={logout}
-			>
-				Logout
-			</button>
+												<div className="col-sm-2">
+												<button 
+													type="submit"
+													className="btn btn-danger"
+													onClick={logout}
+												>
+													Logout
+												</button>
                         </div>
 						
                     </div>
