@@ -235,8 +235,17 @@ function Cadastro(props){
         	<div className="table-wrapper">
                 <div className="table-title">
                     <div className="row">
-                        <div className="col-sm-6">
+                        <div className="col-sm-10">
                             <h2>Cadastrar <b>Usuário</b></h2> 
+                        </div>
+			<div className="col-sm-2">
+			<button 
+				type="submit"
+				className="btn btn-danger"
+				onClick={logout}
+			>
+				Logout
+			</button>
                         </div>
 						
                     </div>
